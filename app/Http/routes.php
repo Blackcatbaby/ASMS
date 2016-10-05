@@ -80,6 +80,7 @@ Route::post('/editGRs', 'GRController@editGRs');
 Route::post('/addGR','GRController@add');
 Route::get('/addGR','GRController@add');
 Route::delete('/deleteGR/{gr_code}',"GRController@deleteGR");
+Route::post('/deleteGR/{gr_code}',"GRController@deleteGR");
 Route::get('/addGRCourses','GRController@addGRCourses');
 Route::post('/addGRCourse','GRController@addGRCourse');
 Route::get('/addGRCourse','GRController@addGRCourse');

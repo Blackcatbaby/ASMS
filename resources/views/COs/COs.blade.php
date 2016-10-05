@@ -19,7 +19,7 @@
                         <tr>
                             <td>{{ $CO->name }}</td>
                             <td>{{ $CO->description }}</td>
-                            <td>{{ $CO->CO_GR_as_weight }}</td>
+                            <td data-test="{{ $CO->CO_GR_as_weight }}" class="test">{{ $CO->CO_GR_as_weight }}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -29,7 +29,6 @@
 </div>
 
 <div id="editCOsDialog"></div>
-
 <script>
     $(".forEditCOs").click(function () {
         var course_code = "{{ $course_code }}";
