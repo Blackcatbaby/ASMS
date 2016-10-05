@@ -93,6 +93,7 @@ Route::post('/GRs/bind/{gr_code}/course/{course_code}', 'GRController@addGRAndCC
 
 Route::get('/CMs/{course_code}','CMController@show');
 Route::post('/CMs/{course_code}','CMController@addCM');
+Route::post('/deleteCM/{cm_code}','CMController@deleteCM');
 Route::get('/COs/{course_code}', 'COController@getCOs');
 Route::get('/editCOs/{course_code}', 'COController@editCOs');
 Route::post('/COs/{course_code}', 'COController@create');
