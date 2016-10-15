@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2016-10-04 12:52:05
+Date: 2016-10-06 16:05:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -124,7 +124,7 @@ CREATE TABLE `ccp_infos` (
   `ccp_CO_as_weight` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `ccp_GR_as_weight` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of ccp_infos
@@ -180,7 +180,7 @@ INSERT INTO `ccp_infos` VALUES ('49', '2014-2015_1_D1000735_ccp_4_1', '2014-2015
 INSERT INTO `ccp_infos` VALUES ('50', '2014-2015_1_D1000735_ccp_4_2', '2014-2015_1_D1000735', '1', '实验2', '', '25', '20', '0', '2', '', '');
 INSERT INTO `ccp_infos` VALUES ('51', '2014-2015_1_D1000735_ccp_4_3', '2014-2015_1_D1000735', '0', '实验3', '', '25', '20', '0', '2', '', '');
 INSERT INTO `ccp_infos` VALUES ('52', '2014-2015_1_D1000735_ccp_4_4', '2014-2015_1_D1000735', '1', '实验4', '', '25', '20', '0', '2', '', '');
-INSERT INTO `ccp_infos` VALUES ('113', '2014-2015_1_D1000735_ccp_3_1', '2014-2015_1_D1000735', '1', '123', '123', '123', '123', '0', '2', '[{\"2014-2015_1_D1000735D1000735_co_1\":\"0.25\"},{\"2014-2015_1_D1000735D1000735_co_3\":\"0.8\"}]', '[{\"gr_1_2\":\"0.3\"}]');
+INSERT INTO `ccp_infos` VALUES ('53', '2014-2015_1_0407260_ccp', '2014-2015_1_0407260', '1', '大学物理II', '', '0', '0', '0', '0', '', '');
 
 -- ----------------------------
 -- Table structure for cd_cg
@@ -221,14 +221,13 @@ CREATE TABLE `cm_cos` (
   `cm_code` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `co_code` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of cm_cos
 -- ----------------------------
-INSERT INTO `cm_cos` VALUES ('32', '2014-2015_1_D1000735_CM7', 'CO1');
-INSERT INTO `cm_cos` VALUES ('33', '2014-2015_1_D1000735_CM7', 'CO2');
-INSERT INTO `cm_cos` VALUES ('34', '2014-2015_1_D1000735_CM3', 'CO1');
+INSERT INTO `cm_cos` VALUES ('39', '2014-2015_1_0413940_CM1', '');
+INSERT INTO `cm_cos` VALUES ('40', '2014-2015_1_0413940_CM1', '');
 
 -- ----------------------------
 -- Table structure for cm_infos
@@ -249,8 +248,7 @@ CREATE TABLE `cm_infos` (
 -- ----------------------------
 -- Records of cm_infos
 -- ----------------------------
-INSERT INTO `cm_infos` VALUES ('2014-2015_1_D1000735_CM3', '2014-2015_1_D1000735', 'hhh', '测试', '撒旦', '大三大四的');
-INSERT INTO `cm_infos` VALUES ('2014-2015_1_D1000735_CM7', '2014-2015_1_D1000735', '44', '44', '44', '44');
+INSERT INTO `cm_infos` VALUES ('2014-2015_1_0413940_CM1', '2014-2015_1_0413940', 'test', 'test', 'test', 'tset');
 
 -- ----------------------------
 -- Table structure for course_infos
@@ -320,15 +318,14 @@ CREATE TABLE `co_infos` (
   `ccp_CO_rest_as_weight` double(8,2) NOT NULL DEFAULT '1.00',
   PRIMARY KEY (`id`),
   KEY `co_code` (`co_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of co_infos
 -- ----------------------------
-INSERT INTO `co_infos` VALUES ('1', '2014-2015_1_D1000735D1000735_co_1', '2014-2015_1_D1000735', 'CO1', '建立学生关于工程的基本概念, 了解信息工程的发展历史、核心技术及最新前沿领域', 'Give the students the basic concepts of engineering and the introduction of evolution history, core technologies and state-of-art frontiers of information engineering.', '100.00', '80.00', '{\"GR1\":\"0.25\"}', '1.00');
-INSERT INTO `co_infos` VALUES ('2', '2014-2015_1_D1000735D1000735_co_2', '2014-2015_1_D1000735', 'CO2', '对信息工程基础知识、系统方法、技术标准等有一个基本了解', 'Gain a preliminary understanding to the fundamental knowledge, system methodology and information technology.', '100.00', '80.00', '{\"GR1\":\"0.25\"}', '1.00');
-INSERT INTO `co_infos` VALUES ('3', '2014-2015_1_D1000735D1000735_co_3', '2014-2015_1_D1000735', 'CO3', '建立工程系统质量、环境、职业健康、安全的概念和服务意识，理解并遵守工程职业道德和规范', 'Establish the students\' engineering vision, build up their technical background and inspire their interest in this field.', '100.00', '80.00', '{\"GR1\":\"0.25\"}', '1.00');
-INSERT INTO `co_infos` VALUES ('4', '2014-2015_1_D1000735D1000735_co_4', '2014-2015_1_D1000735', 'CO4', '建立学生的工程意识、培养工程素养，激发专业兴趣，为后续的专业课程学习起到先导作用', 'Serve as a prelude to the rest of program study by triggering student\'s interest in the program.', '100.00', '80.00', '{\"GR1\":\"0.25\"}', '1.00');
+INSERT INTO `co_infos` VALUES ('1', '2014-2015_1_D1000735D1000735_co_1', '2014-2015_1_D1000735', 'CO1', '建立学生关于工程的基本概念, 了解信息工程的发展历史、核心技术及最新前沿领域', 'Give the students the basic concepts of engineering and the introduction of evolution history, core technologies and state-of-art frontiers of information engineering.', '100.00', '80.00', '[{\"gr_1_3\":\"0.25\"}]', '1.00');
+INSERT INTO `co_infos` VALUES ('2', '2014-2015_1_D1000735D1000735_co_2', '2014-2015_1_D1000735', 'CO2', '对信息工程基础知识、系统方法、技术标准等有一个基本了解', 'Gain a preliminary understanding to the fundamental knowledge, system methodology and information technology.', '100.00', '80.00', '[{\"gr_1_3\":\"0.25\"}]', '1.00');
+INSERT INTO `co_infos` VALUES ('6', '2014-2015-12014-2015_1_0407260_CO1', '2014-2015_1_0407260', 'CO1', 'test', 'test', '0.00', '0.00', '[{\"gr_1_3\":\"0.25\"},{\"gr_1_4\":\"0.85\"}]', '1.00');
 
 -- ----------------------------
 -- Table structure for gr_courses
@@ -339,12 +336,14 @@ CREATE TABLE `gr_courses` (
   `gr_code` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `course_code` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of gr_courses
 -- ----------------------------
-INSERT INTO `gr_courses` VALUES ('15', 'gr_1_2', '2014-2015_1_D1000735');
+INSERT INTO `gr_courses` VALUES ('18', 'gr_1_3', '2014-2015_1_D1000735');
+INSERT INTO `gr_courses` VALUES ('20', 'gr_1_3', '2014-2015_1_0407260');
+INSERT INTO `gr_courses` VALUES ('21', 'gr_1_4', '2014-2015_1_0407260');
 
 -- ----------------------------
 -- Table structure for gr_infos
@@ -366,10 +365,9 @@ CREATE TABLE `gr_infos` (
 -- ----------------------------
 -- Records of gr_infos
 -- ----------------------------
-INSERT INTO `gr_infos` VALUES ('gr_1_1', 'GR1.1', '我也测试', '掌握数学与自然科学知识，能将其应用于复杂软件工程问题的建模和求解', '0.00', '0.00', '0.00', '1.00', '1.00');
-INSERT INTO `gr_infos` VALUES ('gr_1_2', 'GR1.2', '', '掌握软件工程、计算机及相关的基础知识，能将其应用于软件工程中的系统架构、网络通信、支撑平台等问题', '0.00', '0.00', '0.00', '1.00', '1.00');
-INSERT INTO `gr_infos` VALUES ('gr_1_3', 'GR1.3', '', '理解系统的概念及其在软件工程领域的体现，能对复杂软件工程问题的解决方案进行分析，并尝试改进', '0.00', '0.00', '0.00', '1.00', '1.00');
-INSERT INTO `gr_infos` VALUES ('gr_1_4', 'GR1.4', '', '掌握专业知识，能选择恰当的数学模型，能用于描述复杂软件系统，对模型进行推理和求解', '0.00', '0.00', '0.00', '1.00', '1.00');
+INSERT INTO `gr_infos` VALUES ('gr_1_2', 'test', 'test', 'test', '0.00', '0.00', '0.00', '1.00', '1.00');
+INSERT INTO `gr_infos` VALUES ('gr_1_3', 'GR1.3', '', '理解系统的概念及其在软件工程领域的体现，能对复杂软件工程问题的解决方案进行分析，并尝试改进', '0.00', '0.00', '0.00', '0.25', '1.00');
+INSERT INTO `gr_infos` VALUES ('gr_1_4', 'GR1.4', '', '掌握专业知识，能选择恰当的数学模型，能用于描述复杂软件系统，对模型进行推理和求解', '0.00', '0.00', '0.00', '0.15', '1.00');
 INSERT INTO `gr_infos` VALUES ('gr_10_1', 'GR10.1', '', '能够撰写报告和设计文稿，清晰阐述复杂软件工程问题', '0.00', '0.00', '0.00', '1.00', '1.00');
 INSERT INTO `gr_infos` VALUES ('gr_10_2', 'GR10.2', '', '能够进行陈述发言，清楚表达对复杂软件工程问题的看法与见解', '0.00', '0.00', '0.00', '1.00', '1.00');
 INSERT INTO `gr_infos` VALUES ('gr_10_3', 'GR10.3', '', '掌握至少一门外语，能够在跨文化背景下进行沟通和交流', '0.00', '0.00', '0.00', '1.00', '1.00');
@@ -405,7 +403,6 @@ INSERT INTO `gr_infos` VALUES ('gr_8_3', 'GR8.3', '', '具有软件工程系统�
 INSERT INTO `gr_infos` VALUES ('gr_9_1', 'GR9.1', '', '能够与其他学科的成员合作并开展工作', '0.00', '0.00', '0.00', '1.00', '1.00');
 INSERT INTO `gr_infos` VALUES ('gr_9_2', 'GR9.2', '', '能够独立完成团队分配的工作，并能胜任团队成员角色，承担相应责任', '0.00', '0.00', '0.00', '1.00', '1.00');
 INSERT INTO `gr_infos` VALUES ('gr_9_3', 'GR9.3', '', '能够与团队其他成员有效沟通，听取反馈意见，并综合团队成员的意见，进行合理决策', '0.00', '0.00', '0.00', '1.00', '1.00');
-INSERT INTO `gr_infos` VALUES ('gr_9_4', 'GR9.4', '', '具有良好的心理素质和应对突发事件、项目风险与挑战的能力', '0.00', '0.00', '0.00', '1.00', '1.00');
 
 -- ----------------------------
 -- Table structure for migrations

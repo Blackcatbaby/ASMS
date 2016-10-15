@@ -49,7 +49,7 @@ class GRRepository
         foreach ($level1GRSet as $level1GR)
         {
             $resultSet[$counter]['level1'] = $level1GR;
-            $level2GRSet = GRInfo::where('gr_code', 'REGEXP', $level1GR->gr_code."_")->get();
+            $level2GRSet = GRInfo::where('gr_code', 'REGEXP', $level1GR->ALLGR_code."_")->get();
 
             $level2GRSetCounter = 0;
             foreach ($level2GRSet as $level2GR)
@@ -66,7 +66,7 @@ class GRRepository
                    // $courseInfo = CourseInfo::where('course_code', $course_codes[0])->get();
                     $courseInfo=CourseInfo::where('course_code',$courseCode->course_code)->get();
                     $coursesArr[$courseCodeCounter]['name'] = empty($courseInfo[0]->name)? "none" : $courseInfo[0]->name;
-                    $coursesArr[$courseCodeCounter]['weight'] = $courseCode->cs_to_gr_as_weight;
+                   // $coursesArr[$courseCodeCounter]['weight'] = $courseCode->cs_to_gr_as_weight;
                     $courseCodeCounter++;
                 }
                 $resultSet[$counter]['level2'][$level2GRSetCounter]['courses'] = $coursesArr;

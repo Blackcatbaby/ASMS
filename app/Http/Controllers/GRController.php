@@ -90,7 +90,7 @@ class GRController extends Controller
                 ->name, $request->standart_description, $request->ise_description, $request->gr_ALLGR_weight, $gr_code]);
         }
         else{
-            die("对应父项GR权重已不足！");
+            return "对应父项GR权重已不足！";
         }
     }
     public function deleteGRCourse(Request $request,$gr_code){
