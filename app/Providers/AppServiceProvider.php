@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -26,5 +25,9 @@ class AppServiceProvider extends ServiceProvider
 //        if($this->app->environment('local')) {
 //            $this->app->register('Barryvdh\Debugbar\ServiceProvider');
 //        }
+
+        //    \Auth::extend('cas', function($app){
+      //        return new casGuard;
+        //  });
     }
 }

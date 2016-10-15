@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 
 class CasAuthController extends Controller{
-    protected $cas_host = "https://ostec.uestc.edu.cn";
+    protected $cas_host = "ostec.uestc.edu.cn";
     protected $cas_context = "authcas";
-    protected $cas_port = "443";
+    protected $cas_port = 443;
     protected $url = "https://ostec.uestc.edu.cn/authcas/login?service=http://202.115.16.82:8000/dologin";
 
     public function login() {
