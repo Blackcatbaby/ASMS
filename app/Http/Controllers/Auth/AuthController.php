@@ -21,7 +21,7 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+  //  use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
      * Where to redirect users after login / registration.
@@ -29,6 +29,17 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/index';
+    protected $guard='casGuard';
+
+    /**
+     *cas args
+     *
+     *@var string
+     */
+    protected $cas_host = "ostec.uestc.edu.cn";
+    protected $cas_context = "authcas";
+    protected $cas_port = 443;
+    protected $url = "https://ostec.uestc.edu.cn/authcas/login?service=http://121.49.112.227";
 
 
     /**
@@ -40,6 +51,28 @@ class AuthController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
+
+    public function login() {
+        \phpCAS::client(CAS_VERSION_2_0, $this->cas_host, $this->cas_port, $this->cas_context);
+        \phpCAS::setNoCasServerValidation();
+        if (\phpCAS::checkAuthentication()) {
+
+        }else{
+            \phpCAS::forceAuthentication();
+        }
+    }
+
+    public function logout() {
+        \phpCAS::setDebug();
+        \phpCAS::client(CAS_VERSION_2_0, $this->cas_host, $this->cas_port, $this->cas_context);
+        \phpCAS::setNoCasServerValidation();
+        \phpCAS::logoutWithRedirectService($this->url);
+
+    }
+
+
+
+
 
     /**
      * Get a validator for an incoming registration request.

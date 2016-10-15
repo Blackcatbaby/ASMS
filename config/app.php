@@ -162,6 +162,7 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+      //  App\Cas\CasAuthProvider::class,
     ],
 
     /*

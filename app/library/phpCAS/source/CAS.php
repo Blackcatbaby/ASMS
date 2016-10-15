@@ -309,7 +309,7 @@ class phpCAS
      *
      * @hideinitializer
      */
-    private static $_PHPCAS_VERBOSE = false;
+    private static $_PHPCAS_VERBOSE = true;
 
 
     // ########################################################################
