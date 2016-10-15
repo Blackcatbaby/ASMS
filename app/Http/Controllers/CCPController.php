@@ -215,20 +215,22 @@ class CCPController extends Controller
             $GR_status=true;
 
         }
-        if($request->GR3!="" && $request->GR_weight3!=""){
-            $ccp_gr_rest_weight_arr=DB::select("SELECT * FROM gr_infos WHERE gr_code =?",[$request->GR3]);
-            $ccp_gr_rest_weight=$ccp_gr_rest_weight_arr[0]->ccp_GR_rest_as_weight-$request->GR_weight3;
-            if($ccp_gr_rest_weight>=0){
-                DB::update("UPDATE gr_infos SET ccp_GR_rest_as_weight=? where gr_code=?",[$ccp_gr_rest_weight,$request->GR3]);
-                $GRarr[]=[$request->GR3 => $request->GR_weight3];
-            }
-            else{
+        if($request->GR3!="" && $request->GR_weight3!="") {
+            $ccp_gr_rest_weight_arr = DB::select("SELECT * FROM gr_infos WHERE gr_code =?", [$request->GR3]);
+            $ccp_gr_rest_weight = $ccp_gr_rest_weight_arr[0]->ccp_GR_rest_as_weight - $request->GR_weight3;
+            if ($ccp_gr_rest_weight >= 0) {
+                DB::update("UPDATE gr_infos SET ccp_GR_rest_as_weight=? where gr_code=?", [$ccp_gr_rest_weight, $request->GR3]);
+                $GRarr[] = [$request->GR3 => $request->GR_weight3];
+            } else {
                 die("权重错误！！！");
             }
-            $GR_status=true;
+            $GR_status = true;
 
         }
-
+        if ($request->GR1=="" && $request->weight1==""){
+            $status=true;
+            $GR_status=true;
+        }
 
         if($status==true && $GR_status==true) {
             $CCPinfo->ccp_CO_as_weight=json_encode($arr);
