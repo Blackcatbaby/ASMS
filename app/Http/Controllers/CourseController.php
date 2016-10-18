@@ -13,7 +13,7 @@ class CourseController extends Controller
     }
     public function add(Request $request){
         $course=new CourseInfo();
-        $today=
+        var_dump($request);
         $course->course_code=$request->term.$request->course_code;
         $course->name=$request->name;
         $course->english_name=$request->english_name;
@@ -30,5 +30,6 @@ class CourseController extends Controller
         $course->edit_date=date('Y-m-d',time());
         $course->cd_name=$request->cd_name;
         $course->save();
+        return "添加课程成功！";
     }
 }

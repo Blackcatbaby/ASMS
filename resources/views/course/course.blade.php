@@ -1,9 +1,9 @@
-<form>
+﻿<form>
   <div class="form-group">
     <label>请选择学期</label>
     <select name="term" id="term" class="form-control">
-            <option value="2015-2016_1_">2015-2016第一学期</option>
-            <option value="2015-2016_2_">2015-2016第二学期</option>
+      <option value="2015-2016_1_">2015-2016第一学期</option>
+      <option value="2015-2016_2_">2015-2016第二学期</option>
     </select>
   </div>
   <div class="form-group">
@@ -29,8 +29,8 @@
   <div class="form-group">
     <label>请选择课程类型</label>
     <select name="type" id="type" class="form-control">
-        <option>学科基础课</option>
-        <option>核心通识课</option>
+      <option>学科基础课</option>
+      <option>核心通识课</option>
     </select>
   </div>
   <div class="form-group">
@@ -76,10 +76,10 @@
     $("#courseSubmit").click(function () {
         $.ajax({
                     type: "POST",
-                    url: "/addCourse",
-                    dataType: "json",
+                    url: "{{url('/addCourse')}}",
+                    // dataType: "json",
                     data: {
-                        term : $("#term").find("option:selected").text(),
+                        term : $("#term").find("option:selected").val(),
                         course_code : $("#course_code").val(),
                         name: $("#name").val(),
                         english_name: $("#english_name").val(),
@@ -96,12 +96,12 @@
                         advice_books: $("#advice_books").val(),
                         cd_name: $("#cd_name").val(),                  
                     },
-                    // success : function (data) {
-                    //     alert("成功");
-                    // },
-                    // error : function (data) {
-                    //     console.log(data);
-                    // }
+                    success : function (data) {
+                        alert("成功");
+                    },
+                    error : function (data) {
+                        alert("失败，原因可能是已有重复课程，具体原因请联系系统管理员!");
+                    }
                 });
          });
 </script>

@@ -88,6 +88,7 @@ class GRController extends Controller
             DB::update("UPDATE allgr_infos set gr_ALLGR_rest_as_weight=? where ALLGR_code=?",[$rest,$allgr_code[0][0]]);
             DB::update("UPDATE gr_infos SET name = ? ,standart_description = ?,ise_description = ?,gr_ALLGR_weight = ? where gr_code =?", [$request
                 ->name, $request->standart_description, $request->ise_description, $request->gr_ALLGR_weight, $gr_code]);
+            return "SUCCESS!";
         }
         else{
             return "对应父项GR权重已不足！";

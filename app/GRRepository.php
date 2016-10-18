@@ -66,7 +66,7 @@ class GRRepository
                    // $courseInfo = CourseInfo::where('course_code', $course_codes[0])->get();
                     $courseInfo=CourseInfo::where('course_code',$courseCode->course_code)->get();
                     $coursesArr[$courseCodeCounter]['name'] = empty($courseInfo[0]->name)? "none" : $courseInfo[0]->name;
-                    $coursesArr[$courseCodeCounter]['weight'] = $courseCode->cs_to_gr_as_weight;
+                   // $coursesArr[$courseCodeCounter]['weight'] = $courseCode->cs_to_gr_as_weight;
                     $courseCodeCounter++;
                 }
                 $resultSet[$counter]['level2'][$level2GRSetCounter]['courses'] = $coursesArr;

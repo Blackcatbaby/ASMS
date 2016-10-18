@@ -72,6 +72,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/validateCOWeightSum/{course_code}', 'COController@validateCOWeightSum');
     Route::get('/show','CourseController@show');
     Route::post('/addCourse','CourseController@add');
+    Route::get('/addCourse','CourseController@add');
     Route::get('/getStudentsCOGR/{course_code}', 'COController@getStudentsCOGR');
 
 
